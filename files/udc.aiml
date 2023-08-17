@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+    
+    <category>
+        <pattern>hi</pattern>
+        <template>Hello, I'm Advisorbot, your  friendly neighborhood computer science career advisor,
+        what's your name?</template>
+    </category>
+
+<category><pattern>hello</pattern><template><srai>HI</srai></template></category>
+<category><pattern>howdy</pattern><template><srai>HI</srai></template></category>
+<category><pattern>sup</pattern><template><srai>HI</srai></template></category>
+<category><pattern>hola</pattern><template><srai>HI</srai></template></category>
+    
+  <category>
+    <pattern>*</pattern>
+    <template>I have no answer for that.</template>
+  </category>
+  
+  <category>
+    <pattern>my name is *</pattern>
+    <template><think><set name="name"><star/></set></think>
+        Hi <get name="name"/>, I'm here to help you find a career with your computer science degree
+    based on your skills, shall we begin?</template>
+  </category>
+
+  
+  <category>
+      <pattern>yes</pattern>
+      <template>Alright! I'm gonna ask you a series of questions to determine the best career fit for you. Just pick the answer that applies most to you
+        <delay>2</delay>Would you rather lead a team or work with others on a team?
+        <button>
+            <text>Lead a team</text>
+            <postback>YesLead</postback>
+        </button>
+        <button>
+            <text>Work with a team</text>
+            <postback>NoLead</postback>
+        </button>
+      </template>
+  </category>
+  
+  <category>
+      <pattern>no</pattern>
+      <template>That's okay! I hope you come back another time. When you're ready, just say, "Hi"</template>
+  </category>
+  
+  <category>
+      <pattern>YesLead</pattern>
+      <template>That's great! A great leader leads to a great outcome!
+        <delay>2</delay>What are you more interested in:
+        <button>
+            <text>Planning and Organizing</text>
+            <postback>ProjectManager</postback>
+        </button>
+        <button>
+            <text>Making sure everything works as intended</text>
+            <postback>QualityAssurance</postback>
+        </button>
+      </template>
+  </category>
+  
+  <category>
+      <pattern>NoLead</pattern>
+      <template>That's great! Strong members of a team lead to strong outcomes!
+        <delay>2</delay>What interests you more?
+        <button>
+            <text>Development</text>
+            <postback>development</postback>
+        </button>
+        <button>
+            <text>Analytics</text>
+            <postback>analytics</postback>
+        </button>
+          
+      </template>
+  </category>
+  
+  <category>
+      <pattern>development</pattern>
+      <template>Making things is fun and rewarding huh
+        <delay>2</delay>Are you more interested in,
+        <button>
+            <text>How things look</text>
+            <postback>frontend</postback>
+        </button>
+        <button>
+            <text>How things work in the background</text>
+            <postback>backend</postback>
+        </button>
+      </template>
+  </category>
+  
+  <category>
+      <pattern>analytics</pattern>
+      <template>Finding patterns in information is satisfying indeed
+      <delay>2</delay>Would you say you are interested in computer security?
+      <button>
+          <text>Yes</text>
+          <postback>SecurityAnalyst</postback>
+      </button>
+      <button>
+          <text>No</text>
+          <postback>DataAnalyst</postback>
+      </button>
+      </template>
+  </category>
+  
+  <category>
+      <pattern>ProjectManager</pattern>
+      <template>
+          <delay>3</delay><get name="name"/>, with your answers I believe you would have great success as an IT Project Manager!
+          IT Project Managers are in charge of planning, budgeting, and basically running an organization’s IT goals and initiatives. 
+          <delay>5</delay>If you'd like to try again for another career recommendation, just say, "Yes." Otherwise, say, "No."
+      </template>
+  </category>
+  
+  <category>
+      <pattern>QualityAssurance</pattern>
+      <template>
+          <delay>3</delay><get name="name"/>, with your answers I believe you would have great success as a Quality Assurance Manager!
+          Quality Assurance Managers are in charge of monitoring and ensuring high-quality standards in production, 
+          inspecting processes and outputs, and supervising staff. 
+          They analyze data, communicate with external officers, and maintain records.
+          <delay>5</delay>If you'd like to try again for another career recommendation, just say, "Yes." Otherwise, say, "No."
+      </template>
+  </category>
+  
+  <category>
+      <pattern>frontend</pattern>
+      <template>
+          <delay>3</delay><get name="name"/>, with your answers I believe you'd have great success as a Front-end Software or Web developer!
+          Software Developers are tasked with creating and developing websites, programs, and other applications that run on computers or other devices. 
+          Web Developers are programmers that are concentrated on coding, designing, and building out the layout of a website.
+          <delay>5</delay>If you'd like to try again for another career recommendation, just say, "Yes." Otherwise, say, "No."
+          </template>
+  </category>
+  
+  <category>
+      <pattern>backend</pattern>
+      <template>
+          <delay>3</delay><get name="name"/>, with your answers I believe you'd have great success as a Back-end Developer!
+          Back-end Developers are the experts who build and maintain the mechanisms that process data and perform actions on websites. 
+          Unlike front-end developers, who control everything you can see on a website, back-end developers are involved in data storage, 
+          security, and other server-side functions that you cannot see.
+          <delay>5</delay>If you'd like to try again for another career recommendation, just say, "Yes." Otherwise, say, "No."
+      </template>
+  </category>
+  
+  
+  
+  <category>
+      <pattern>SecurityAnalyst</pattern>
+      <template>
+          <delay>3</delay><get name="name"/>, with your answers I believe you'd have great success as an Information Security Analyst!
+          Information Security Analysts are in charge of implementing systems of safety and protecting a company’s computer networks.
+          <delay>5</delay>If you'd like to try again for another career recommendation, just say, "Yes." Otherwise, say, "No."
+      </template>
+  </category>
+  
+  <category>
+      <pattern>DataAnalyst</pattern>
+      <template>
+          <delay>3</delay><get name="name"/>, with your answers I believe you'd have great success as a Data Analyst!
+          A data analyst collects, cleans, and interprets data sets in order to answer a question or solve a problem. 
+          They work in many industries, including business, finance, criminal justice, science, medicine, and government.
+          <delay>5</delay>If you'd like to try again for another career recommendation, just say, "Yes." Otherwise, say, "No."
+      </template>
+  </category>
+
+</aiml>
+
